@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="create-list">
+    <div class="create-room">
+      <%= link_to "ルームを作成する", new_room_path %>
+    </div>
+
+    <div class="rooms">
+      <% @rooms.each do |room| %>
+        <div class="room-name">
+          <%= link_to room.name, room_path(id: room) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

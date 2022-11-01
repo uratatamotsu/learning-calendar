@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LearningCalendar</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__bar">
+        <h1 class="grid-6"><a href="/">LearningCalendar</a></h1>
+        
+          <div class="user_nav grid-6">
+            <% if user_signed_in? %>
+            <li><%= link_to current_user.name, "#", class: "user-name" %> </li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+            <% else%>
+            <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+            <% end %>
+          </div>
+        
+      </div>
+    </header>
+    <%= yield %>
+    <footer class="footer">
+      <p>
+        Copyright  LearningCalendar2022.
+      </p>
+    </footer>
+  </body>
+</html>

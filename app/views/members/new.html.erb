@@ -1,0 +1,10 @@
+<div class="main">
+  <div class='create-member-'>
+    <h1>参加メンバー</h1>
+    <div class="create-room">
+    <%= form_with model: [@member], class: 'form', local: true do |f| %>
+    <%= f.submit '送信', class: 'form-submit' %>
+    <% end %>
+    </div>
+  </div>
+</div>

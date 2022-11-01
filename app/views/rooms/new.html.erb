@@ -1,0 +1,16 @@
+<div class="main">
+  <div class='create-room-new'>
+    <h1>新規ルーム</h1>
+    <%=form_with model: @room, local: true do |f|%>
+      <div class='create-room-mane'>
+        <%= f.label :name, :ルーム名, class: 'room-form'%>
+      </div>
+      <div class='create-room-in'>
+        <%= f.text_field :name, class: 'room-form', placeholder: 'ルーム名を入力してください'%>
+      </div>
+      <div class='create-room-btn'>
+        <%= f.submit class: 'room-form'%>
+      </div>
+    <% end %>
+  </div>
+</div>
